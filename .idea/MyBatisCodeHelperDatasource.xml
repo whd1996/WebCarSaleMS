@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MyBatisCodeHelperDatasource">
+    <option name="projectProfile">
+      <ProjectProfile>
+        <option name="controllerTemplateString" value="&#10;#* @vtlvariable name=&quot;tableName&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;entityPackageName&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;entityClassName&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;servicePackageName&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;serviceInterfacePackage&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;serviceClassName&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;serviceInterfaceClassName&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;mapperPackageName&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;mapperClassName&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;controllerPackage&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;tableRemark&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;myDate&quot; type=&quot;java.util.Date&quot; *#&#10;#* @vtlvariable name=&quot;simpleDateFormat&quot; type=&quot;java.text.SimpleDateFormat&quot; *#&#10;package $!{controllerPackage};&#10;import $!{entityPackageName}.$!{entityClassName};&#10;#set($realServiceName = $!{serviceClassName}+'Impl')&#10;import $!{servicePackageName}.$!{realServiceName};&#10;import org.springframework.web.bind.annotation.*;&#10;&#10;#set($serviceFirstLower = $!{serviceClassName.substring(0,1).toLowerCase()}+$!{serviceClassName.substring(1,$!{serviceClassName.length()})})&#10;import javax.annotation.Resource;&#10;&#10;/**&#10;* $!{info.tableRemarks}($!{tableName})表控制层&#10;*&#10;* @author xxxxx&#10;*/&#10;@RestController&#10;@RequestMapping(&quot;/$!{tableName}&quot;)&#10;public class $!{entityClassName}Controller {&#10;/**&#10;* 服务对象&#10;*/&#10;@Resource&#10;private $!{serviceClassName} $!{serviceFirstLower};&#10;&#10;/**&#10;* 通过主键查询单条数据&#10;*&#10;* @param id 主键&#10;* @return 单条数据&#10;*/&#10;@GetMapping(&quot;selectOne&quot;)&#10;public $!{entityClassName} selectOne(Integer id) {&#10;return $!{serviceFirstLower}.selectByPrimaryKey(id);&#10;}&#10;&#10;}" />
+        <option name="deleteByPrimayKeyEnabled" value="false" />
+        <option name="generateService" value="true" />
+        <option name="generatedClassPathList">
+          <list>
+            <option value="F:\eclipse2021-12\IdeaSpace\WebCarSaleMS\src\entity" />
+          </list>
+        </option>
+        <option name="insertMethodEnabled" value="false" />
+        <option name="insertSelectiveMethodEnabled" value="false" />
+        <option name="javaMapperPackage" value="dao" />
+        <option name="javaMapperPath" value="$PROJECT_DIR$/src" />
+        <option name="javaModelPackage" value="entity" />
+        <option name="javaModelPath" value="$PROJECT_DIR$/src" />
+        <option name="lastDatabaseCrudChooseModuleName" value="WebCarSaleMS" />
+        <option name="modelAddToString" value="true" />
+        <option name="moduleNameToPackageAndPathMap">
+          <map>
+            <entry key="WebCarSaleMS">
+              <value>
+                <UserPackageAndPathInfoByModule>
+                  <option name="javaMapperPackage" value="dao" />
+                  <option name="javaMapperPath" value="$PROJECT_DIR$/src" />
+                  <option name="javaModelPacakge" value="entity" />
+                  <option name="javaModelPath" value="$PROJECT_DIR$/src" />
+                  <option name="javaServiceInterfacePath" value="$PROJECT_DIR$/src" />
+                  <option name="javaServicePackage" value="service" />
+                  <option name="javaServicePath" value="$PROJECT_DIR$/src" />
+                  <option name="xmlPackage" value="dao" />
+                  <option name="xmlPath" value="$PROJECT_DIR$/src/dao" />
+                </UserPackageAndPathInfoByModule>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="mybatisGeneratorMapperSuffix" value="Dao" />
+        <option name="mybatisPlusIdType" value="AUTO" />
+        <option name="mybatisPlusStaticField" value="false" />
+        <option name="selectByPrimaryKeyEnabled" value="false" />
+        <option name="tableGenerateConfigs">
+          <map>
+            <entry key="webcss:car">
+              <value>
+                <TableGenerateConfig>
+                  <option name="deleteByPrimayKeyEnabled" value="false" />
+                  <option name="generatedKey" value="id" />
+                  <option name="insertMethodEnabled" value="false" />
+                  <option name="insertSelectiveMethodEnabled" value="false" />
+                  <option name="javaModelName" value="Car" />
+                  <option name="moduleName" value="WebCarSaleMS" />
+                  <option name="selectByPrimaryKeyEnabled" value="false" />
+                  <option name="updateByPrimaryKeySelectiveEnabled" value="false" />
+                  <option name="updateByPrimaykeyEnabled" value="false" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="webcss:order">
+              <value>
+                <TableGenerateConfig>
+                  <option name="deleteByPrimayKeyEnabled" value="false" />
+                  <option name="insertMethodEnabled" value="false" />
+                  <option name="insertSelectiveMethodEnabled" value="false" />
+                  <option name="javaModelName" value="Order" />
+                  <option name="moduleName" value="WebCarSaleMS" />
+                  <option name="selectByPrimaryKeyEnabled" value="false" />
+                  <option name="updateByPrimaryKeySelectiveEnabled" value="false" />
+                  <option name="updateByPrimaykeyEnabled" value="false" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="webcss:staff">
+              <value>
+                <TableGenerateConfig>
+                  <option name="deleteByPrimayKeyEnabled" value="false" />
+                  <option name="generatedKey" value="id" />
+                  <option name="insertMethodEnabled" value="false" />
+                  <option name="insertSelectiveMethodEnabled" value="false" />
+                  <option name="javaModelName" value="Staff" />
+                  <option name="moduleName" value="WebCarSaleMS" />
+                  <option name="selectByPrimaryKeyEnabled" value="false" />
+                  <option name="updateByPrimaryKeySelectiveEnabled" value="false" />
+                  <option name="updateByPrimaykeyEnabled" value="false" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="webcss:user">
+              <value>
+                <TableGenerateConfig>
+                  <option name="deleteByPrimayKeyEnabled" value="false" />
+                  <option name="generatedKey" value="id" />
+                  <option name="insertMethodEnabled" value="false" />
+                  <option name="insertSelectiveMethodEnabled" value="false" />
+                  <option name="javaModelName" value="User" />
+                  <option name="moduleName" value="WebCarSaleMS" />
+                  <option name="selectByPrimaryKeyEnabled" value="false" />
+                  <option name="updateByPrimaryKeySelectiveEnabled" value="false" />
+                  <option name="updateByPrimaykeyEnabled" value="false" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="updateByPrimaryKeySelectiveEnabled" value="false" />
+        <option name="updateByPrimaykeyEnabled" value="false" />
+        <option name="xmlMapperPackage" value="dao" />
+        <option name="xmlMapperPath" value="$PROJECT_DIR$/src/dao" />
+      </ProjectProfile>
+    </option>
+  </component>
+</project>
